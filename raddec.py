@@ -8,7 +8,7 @@ numrec="01"
 numpack="01"
 length="000"
 checkstring="00"
-IP_ADDRESS="20.51.194.89"
+IP_ADDRESS="[INSERT IP HERE]"
 try:
    for line in iter(sys.stdin.readline, b''):
       dict=json.loads(line)
@@ -40,7 +40,7 @@ try:
       checkstring=str('{:02x}'.format(checksum%256))
       raddec=newbase+checkstring
       sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # UDP
-      sock.sendto(bytes.fromhex(raddec), ("20.51.194.89", 50001))
+      sock.sendto(bytes.fromhex(raddec), (IP_ADDRESS, 50001))
       print(raddec)
 except KeyboardInterrupt:
    sys.stdout.flush()
