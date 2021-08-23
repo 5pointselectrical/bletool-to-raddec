@@ -1,9 +1,10 @@
+#To-do: Get timestamp and packet code working properly
 import sys
 import json
 import socket
 radflag="100"
-timeflag="f00"
-packflag="f10"
+#timeflag="f00"
+#packflag="f10"
 numrec="01"
 numpack="01"
 length="000"
@@ -20,18 +21,18 @@ try:
       rectype=str('{:02x}'.format(dict['receiverIdType']))
       recid=dict['receiverId']
       rec=numrec+rssi+numdec+rectype+recid
-      timestamp=str('{:x}'.format(dict['timestamp']))
-      packet=dict['packets']
-      packlength=str('{:03x}'.format(int(len(packet)/2)))
+      #timestamp=str('{:x}'.format(dict['timestamp']))
+      #packet=dict['packets']
+      #packlength=str('{:03x}'.format(int(len(packet)/2)))
       base=radflag+length+beacon+rec
-      time=timeflag+timestamp
-      data=packflag+numpack+packlength+packet
+      #time=timeflag+timestamp
+      #data=packflag+numpack+packlength+packet
       lengthint=int((len(base+checkstring))/2)
       length=str('{:03x}'.format(lengthint))
       newbase=radflag+length+beacon+rec
-      timebase=newbase+time
-      database=newbase+data
-      fullbase=newbase+time+data
+      #timebase=newbase+time
+      #database=newbase+data
+      #fullbase=newbase+time+data
       index=0
       checksum=0
       while index < int(lengthint - 1):
