@@ -21,5 +21,6 @@ Python 3 must be CPython. MicroPython does not work. I used the full Python3 ins
 # Instructions
 0. The scripts are intended to be run straight on your OpenWrt-supporting router.
 1. Make sure port 50001 is open on your Pareto Anywhere server.
-2. Modify raddec.py to set the IP address of your server.
-3. Execute runme.sh
+2. Replace "aabbccddeeff" in ble_json.sh with the MAC address of your own router. Make sure it's all lowercase, with no :
+3. Modify raddec.py to set the IP address of your server.
+4. Execute runme.sh
