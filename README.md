@@ -6,6 +6,8 @@ runme.sh is a launcher. Its purpose is to set the mac address variable, make sur
 
 raddec.py is the Micropython script. It takes the JSON produced by BleTool, converts it into the encoded raddec format, then sends it over to a remote Pareto Anywhere server. The hardware this is designed to run on is unlikely to support a local instance of Pareto Anywhere.
 
+bleraddec is the optional /etc/init.d file. This enables the program to run as a service, starting up at boot and respawning should it crash.
+
 # Hardware
 This was programmed for the Spitz v2, but anything that supports GL.iNet's BleTool should work. 
 
@@ -20,3 +22,9 @@ MicroPython was selected over CPython for storage reasons. This script is easily
 1. Make sure port 50001 is open on your Pareto Anywhere server.
 2. Modify raddec.py to set the IP address of your server.
 3. Execute runme.sh
+
+# How to run as a service
+0. Keep runme.sh and raddec.py in your /root directory.
+1. Make bleraddec executable.
+2. Copy bleraddec to /etc/init.d
+3. Enable with "/etc/init.d/bleraddec enable"
