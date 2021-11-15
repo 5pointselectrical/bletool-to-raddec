@@ -11,7 +11,7 @@ numpack="1"
 length="000"
 checkstring="00"
 IP_ADDRESS="127.0.0.1"
-RECEIVER_MAC="aabbccddeeff"
+RECEIVER_MAC=sys.argv[1]
 def iter2(c, s):
     while True:
         v = c()
@@ -47,7 +47,6 @@ try:
            sockaddr = usocket.getaddrinfo(IP_ADDRESS,50001)[0][-1]
            sock = usocket.socket(usocket.AF_INET, usocket.SOCK_DGRAM)
            sock.sendto(raddec, sockaddr)
-           print(raddec)
            sock.close()
            gc.collect()
 except KeyboardInterrupt:
