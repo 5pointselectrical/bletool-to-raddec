@@ -1,3 +1,5 @@
+This has been superseded by [this project](https://github.com/5pointselectrical/bleRaddec)!
+
 # What is this?
 This is a pair of scripts designed to convert output from [GL-iNet's BleTool](https://github.com/gl-inet/bletool) into [encoded raddecs](https://github.com/reelyactive/raddec) that are compatible with [Pareto Anywhere](https://github.com/reelyactive/pareto-anywhere). They are designed specifically to pick up advertising packets from [Minew's](https://www.minew.com/) beacons.
 
